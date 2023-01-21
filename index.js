@@ -18,34 +18,75 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
-const { title } = require("process");
 
 
 // TODO: Create an array of questions for user input
 const questions = [{
     type: "input",
     name: "title",
-    message: "What is the title of your project?"
+    message: "What is the title of your project?",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "description",
-    message: "Please enter a description of your project."
+    message: "Please enter a description of your project.",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "installation",
-    message: "Please enter installation instructions for your application."
+    message: "Please enter installation instructions for your application.",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "usage",
-    message: "Please enter usage information for your application."
+    message: "Please enter usage information for your application.",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "contribution",
-    message: "Please specify contribution guidelines for your project."
+    message: "Please specify contribution guidelines for your project.",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "test",
-    message: "Please enter testing instructions for your application."
+    message: "Please enter testing instructions for your application.",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "list",
     name: "license",
@@ -55,14 +96,21 @@ const questions = [{
 }, {
     type: "input",
     name: "gitHub",
-    message: "What is your GitHub username?"
+    message: "What is your GitHub username?",
+    validate: (answer) => {
+        if (answer.trim().length) {
+            return true;
+        } else {
+            return "Please enter a title for your project.";
+        }
+    }
 }, {
     type: "input",
     name: "email",
     message: "Please enter your email address.",
     validate: function (answer) {
         const valid = /^[\w]+[\w-\.!#$%^&*?<>]*@([\w-]+\.)+[\w-]{2,4}$/;
-        if (valid.test(answer)) {
+        if (valid.test(answer.trim())) {
             return true;
         } else {
             return "Please enter a valid email address.";
