@@ -24,19 +24,27 @@ const licenses = {
 
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  return licenses[license].badge;
+  if (license === "None") {
+    return "";
+  } else {
+    return `![badge](${licenses[license].badge})`;
+  }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  return licenses[license].link;
+  if (license === "None") {
+    return "";
+  } else {
+    return `[${Object.keys(licenses).find((cv) => cv === license)}](${licenses[license].link})`;
+  }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `\n\n${renderLicenseBadge(license)}\n\n[${licenses[license]}](${renderLicenseLink(license)})\n\n<br/>\n\n`;
+  return `\n${renderLicenseBadge(license)}\n\n${renderLicenseLink(license)}\n\n<br/>\n\n`;
 }
 
 // TODO: Create a function to generate markdown for README
@@ -48,13 +56,13 @@ ${data.description}
 <br/>
 
 ## Table of Contents
-[Description](#Description)
-[Installation](#Installation)
-[Usage](#Usage)
-[License](#License)
-[Contributing](#Contributing)
-[Tests](#Tests)
-[Questions](#Questions)
+[Description](#Description) <br/>
+[Installation](#Installation) <br/>
+[Usage](#Usage) <br/>
+[License](#License) <br/>
+[Contributing](#Contributing) <br/>
+[Tests](#Tests) <br/>
+[Questions](#Questions) <br/>
 
 <br/>
 
@@ -71,20 +79,20 @@ ${data.usage}
 ## License
 ${renderLicenseSection(data.license)}
 ## Contributing
-${data.contributing}
+${data.contribution}
 
 <br/>
 
 ## Tests
-${data.tests}
+${data.test}
 
 <br/>
 
 ## Questions
 Contact Information:
-* [GitHub](${data.gitHub})
+* [GitHub](https://github.com/${data.gitHub})
 * [Email](mailto:${data.email})
 `;
 }
 
-module.exports = {generateMarkdown, licenses};
+module.exports = { generateMarkdown, licenses };
