@@ -91,7 +91,7 @@ const questions = [{
     type: "list",
     name: "license",
     message: "Please select a license for your project.",
-    choices: ["Creative Commons Zero v1.0 Universal", "GNU Lesser General Public License v3.0", "MIT", "The Unlicense", "None"],
+    choices: Object.keys(generateMarkdown.licenses),
     default: 2
 }, {
     type: "input",
