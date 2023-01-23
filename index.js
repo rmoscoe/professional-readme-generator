@@ -113,18 +113,18 @@ function writeToFile(data) {
 
 // TODO: Create a function to initialize app
 function init() {
-            inquirer.prompt(questions)
-                .then((answers) => {
-                    writeToFile(answers);
-                })
-                .catch((err) => {
-                    if (err.isTtyError) {
-                        console.log("The prompts couldn't be rendered in the current environment.");
-                    } else {
-                        console.log(err);
-                    }
-                });
-        }
+    inquirer.prompt(questions)
+        .then((answers) => {
+            writeToFile(answers);
+        })
+        .catch((err) => {
+            if (err.isTtyError) {
+                console.log("The prompts couldn't be rendered in the current environment.");
+            } else {
+                console.log(err);
+            }
+        });
+}
 
 // Function call to initialize app
 init();

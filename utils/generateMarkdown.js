@@ -37,7 +37,7 @@ function renderLicenseLink(license) {
   if (license === "None") {
     return "";
   } else {
-    return `[${Object.keys(licenses).find((cv) => cv === license)}](${licenses[license].link})`;
+    return `[${license}](${licenses[license].link})`;
   }
 }
 
