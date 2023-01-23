@@ -56,13 +56,13 @@ ${data.description}
 <br/>
 
 ## Table of Contents
-[Description](#Description) <br/>
-[Installation](#Installation) <br/>
-[Usage](#Usage) <br/>
-[License](#License) <br/>
-[Contributing](#Contributing) <br/>
-[Tests](#Tests) <br/>
-[Questions](#Questions) <br/>
+[Description](#description) <br/>
+[Installation](#installation) <br/>
+[Usage](#usage) <br/>
+[License](#license) <br/>
+[Contributing](#contributing) <br/>
+[Tests](#tests) <br/>
+[Questions](#questions) <br/>
 
 <br/>
 
